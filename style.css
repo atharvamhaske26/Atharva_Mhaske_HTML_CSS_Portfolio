@@ -1,0 +1,623 @@
+/* =========================================================
+   Atharva Mhaske - Portfolio
+   HTML5 + CSS3 only. No JavaScript.
+   Palette (4 colours): navy, teal, amber, light
+   ========================================================= */
+
+/* ---------- 1. Variables ---------- */
+:root {
+  --navy: #0f172a;        /* main dark colour */
+  --navy-soft: #1e293b;   /* slightly lighter navy for cards on dark */
+  --teal: #0d9488;        /* primary accent */
+  --teal-dark: #0f766e;   /* hover state for teal */
+  --amber: #f59e0b;       /* secondary accent */
+  --light: #f8fafc;       /* page background */
+  --white: #ffffff;
+  --text: #1e293b;
+  --muted: #64748b;
+  --border: #e2e8f0;
+
+  --radius: 14px;
+  --shadow: 0 4px 16px rgba(15, 23, 42, 0.08);
+  --shadow-hover: 0 12px 28px rgba(15, 23, 42, 0.16);
+  --header-h: 72px;
+}
+
+/* ---------- 2. Reset and base ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 8px);
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: var(--text);
+  background: var(--light);
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  line-height: 1.2;
+  margin: 0 0 0.6rem;
+  color: var(--navy);
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: var(--teal);
+  text-decoration: none;
+}
+
+a:focus-visible,
+.btn:focus-visible {
+  outline: 3px solid var(--amber);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* ---------- 3. Header and navigation ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--navy);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: var(--header-h);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.logo-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: var(--teal);
+  color: var(--white);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.main-nav a {
+  display: block;
+  padding: 0.5rem 0.9rem;
+  color: #cbd5e1;
+  font-weight: 500;
+  border-radius: 8px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.main-nav a:hover,
+.main-nav a:focus-visible {
+  background: var(--navy-soft);
+  color: var(--amber);
+}
+
+/* ---------- 4. Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+  font-weight: 600;
+  font-size: 1rem;
+  border-radius: 999px;
+  border: 2px solid transparent;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--amber);
+  color: var(--navy);
+}
+
+.btn-primary:hover {
+  background: #fbbf24;
+}
+
+.btn-outline {
+  border-color: var(--white);
+  color: var(--white);
+}
+
+.btn-outline:hover {
+  background: var(--white);
+  color: var(--navy);
+}
+
+/* ---------- 5. Hero ---------- */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, #134e4a 100%);
+  color: var(--white);
+  padding: 4.5rem 0 5rem;
+}
+
+.hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.hero-text {
+  flex: 1 1 55%;
+}
+
+.eyebrow {
+  color: var(--amber);
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  margin-bottom: 0.4rem;
+}
+
+.hero h1 {
+  color: var(--white);
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  margin-bottom: 0.4rem;
+}
+
+.role {
+  font-size: clamp(1.1rem, 2.6vw, 1.5rem);
+  color: #5eead4;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+}
+
+.intro {
+  max-width: 560px;
+  color: #cbd5e1;
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hero-card {
+  flex: 0 1 320px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.avatar {
+  display: grid;
+  place-items: center;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 1.4rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal), var(--amber));
+  color: var(--navy);
+  font-size: 2.6rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.hero-facts li {
+  padding: 0.55rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+}
+
+.hero-facts li:first-child {
+  border-top: 0;
+}
+
+.hero-facts strong {
+  color: var(--amber);
+}
+
+/* ---------- 6. Generic sections ---------- */
+.section {
+  padding: 4.5rem 0;
+}
+
+.section-alt {
+  background: var(--white);
+}
+
+.section-title {
+  font-size: clamp(1.7rem, 4vw, 2.3rem);
+  position: relative;
+  padding-bottom: 0.7rem;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 56px;
+  height: 4px;
+  border-radius: 4px;
+  background: var(--teal);
+}
+
+.section-sub {
+  color: var(--muted);
+  margin: 0.8rem 0 2.2rem;
+  max-width: 620px;
+}
+
+/* ---------- 7. About (CSS Grid) ---------- */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 1.5rem;
+}
+
+.about-bio {
+  grid-row: span 3;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.section-alt .card {
+  background: var(--light);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card h3 {
+  font-size: 1.15rem;
+  color: var(--teal-dark);
+}
+
+.edu-degree {
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.edu-place {
+  margin-bottom: 0.3rem;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.92rem;
+  margin: 0;
+}
+
+.edu-school {
+  margin-top: 0.6rem;
+  line-height: 1.5;
+}
+
+.check-list li {
+  position: relative;
+  padding-left: 1.6rem;
+  margin-bottom: 0.45rem;
+}
+
+.check-list li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--teal);
+  font-weight: 700;
+}
+
+/* ---------- 8. Skills (CSS Grid) ---------- */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.2rem;
+}
+
+.skill-card {
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--teal);
+  border-radius: var(--radius);
+  padding: 1.3rem 1.2rem;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-top-color 0.25s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-top-color: var(--amber);
+}
+
+.skill-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.skill-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.5;
+}
+
+/* ---------- 9. Projects (Flexbox) ---------- */
+.projects-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.project-card {
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.7rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.project-card:hover,
+.project-card:focus-within {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--teal);
+}
+
+.project-tag {
+  align-self: flex-start;
+  background: #ccfbf1;
+  color: var(--teal-dark);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 0.25rem 0.7rem;
+  border-radius: 999px;
+  margin-bottom: 0.9rem;
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+}
+
+.project-card p {
+  color: var(--muted);
+  flex-grow: 1;
+}
+
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.4rem;
+}
+
+.tech-list li {
+  background: var(--navy);
+  color: var(--white);
+  font-size: 0.82rem;
+  padding: 0.28rem 0.75rem;
+  border-radius: 6px;
+}
+
+/* ---------- 10. Contact ---------- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0;
+  background: var(--navy);
+  color: var(--white);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  border-bottom: 4px solid var(--teal);
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+
+.contact-card:hover,
+.contact-card:focus-visible {
+  transform: translateY(-4px);
+  background: var(--navy-soft);
+  border-bottom-color: var(--amber);
+}
+
+.contact-label {
+  color: var(--amber);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.contact-value {
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+}
+
+/* ---------- 11. Footer ---------- */
+.site-footer {
+  background: var(--navy);
+  color: #cbd5e1;
+  padding: 1.6rem 0;
+  font-size: 0.95rem;
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.footer-inner p {
+  margin: 0;
+}
+
+.site-footer a {
+  color: var(--amber);
+  font-weight: 600;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- 12. Responsive: tablet ---------- */
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-bio {
+    grid-row: auto;
+  }
+
+  .hero-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  .hero-card {
+    flex: none;
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+/* ---------- 13. Responsive: mobile ---------- */
+@media (max-width: 640px) {
+  :root {
+    --header-h: 104px;
+  }
+
+  .header-inner {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.4rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .main-nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .main-nav a {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.92rem;
+  }
+
+  .hero {
+    padding: 3rem 0 3.5rem;
+  }
+
+  .hero-buttons .btn {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    flex-basis: 100%;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ---------- 14. Accessibility: reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}

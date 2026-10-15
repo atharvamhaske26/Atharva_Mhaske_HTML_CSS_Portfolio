@@ -1,0 +1,3 @@
+Project description
+
+This is a responsive personal portfolio website for Atharva Mhaske, built with only HTML5 and CSS3, with no JavaScript or frameworks. It has a sticky navigation bar, a hero section with call-to-action buttons, and About, Skills, Projects, Contact and Footer sections, all linked with section IDs. Skills and projects are shown as cards laid out with CSS Grid and Flexbox, and all colours are controlled with CSS variables. Buttons, navigation links, cards and contact links have hover and focus states, and media queries adapt the layout for tablet and mobile screens without horizontal scrolling.
